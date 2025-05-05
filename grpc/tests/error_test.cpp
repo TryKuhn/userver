@@ -56,7 +56,7 @@ public:
 
         google::rpc::QuotaFailure quota_failure;
         auto& violation = *quota_failure.add_violations();
-        violation.set_subject("123-pipepline000");
+        violation.set_subject("123-pipeline000");
         violation.set_description("fts quota [fts-receive] exhausted");
         status_obj.add_details()->PackFrom(quota_failure);
 
@@ -135,7 +135,7 @@ UTEST_F(GrpcClientWithDetailedErrorTest, UnaryRPC) {
         R"([type.googleapis.com/google.rpc.Help] { links { description: "test_url" )"
         R"(url: "http://help.url/auth/fts-documentation/tvm" } } } details { )"
         R"([type.googleapis.com/google.rpc.QuotaFailure] { violations )"
-        R"({ subject: "123-pipepline000" description: )"
+        R"({ subject: "123-pipeline000" description: )"
         R"("fts quota [fts-receive] exhausted" } } })";
 
     auto client = MakeClient<sample::ugrpc::UnitTestServiceClient>();

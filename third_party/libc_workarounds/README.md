@@ -3,7 +3,7 @@ This library contains workarounds for libc when used in taxi/uservices.
 It corrects libc behavior in regards to thread-switching execution contexts.
 Namely, moving execution contexts between threads breaks errno and pthread_self
 accesses with optimizations. This happens because their implementations
-are marked as not dependend on an external state of the program.
+are marked as not dependent on an external state of the program.
 
 These patches were deemed not acceptable in musl upstream (works as designed)
 and should not be used anywhere else.

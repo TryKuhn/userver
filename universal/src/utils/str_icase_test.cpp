@@ -68,8 +68,8 @@ TEST(StrIcases, CompareEqual) {
 
     EXPECT_TRUE(utils::StrIcaseEqual{}(std::string_view("WARNING"), std::string_view("warning")));
 
-    EXPECT_FALSE(utils::StrIcaseEqual{}(std::string_view("WARNIN"), std::string_view("warning")));
-    EXPECT_FALSE(utils::StrIcaseEqual{}(std::string_view("WARNING"), std::string_view("warnin")));
+    EXPECT_FALSE(utils::StrIcaseEqual{}(std::string_view("WARNING"), std::string_view("warning")));
+    EXPECT_FALSE(utils::StrIcaseEqual{}(std::string_view("WARNING"), std::string_view("warning")));
 }
 
 TEST(StrIcases, CompareLess) {
@@ -83,8 +83,8 @@ TEST(StrIcases, CompareLess) {
         std::string_view{"abcdefghijklmnopqrstuvwxyz"}, std::string_view{"AbCdEFgHIJKLMNOpQRSTUVWXYZ"}
     ));
 
-    EXPECT_TRUE(utils::StrIcaseLess{}(std::string_view("WARNIN"), std::string_view("warning")));
-    EXPECT_TRUE(utils::StrIcaseLess{}(std::string_view("warnin"), std::string_view("WARNING")));
+    EXPECT_TRUE(utils::StrIcaseLess{}(std::string_view("WARNING"), std::string_view("warning")));
+    EXPECT_TRUE(utils::StrIcaseLess{}(std::string_view("warning"), std::string_view("WARNING")));
 
     EXPECT_TRUE(utils::StrIcaseLess{}(std::string_view("\0a", 2), std::string_view("\0b", 2)));
     EXPECT_FALSE(utils::StrIcaseLess{}(std::string_view("\0b", 2), std::string_view("\0a", 2)));

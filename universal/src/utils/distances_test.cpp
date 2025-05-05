@@ -54,7 +54,7 @@ INSTANTIATE_TEST_SUITE_P(
         TestData{"hell", "hello", 1},
         TestData{"hellow", "hello", 1},
         TestData{"bad", "good", 3},
-        TestData{"apple", "happend", 4},
+        TestData{"apple", "happened", 4},
         TestData{"a", "append", 5},
         TestData{"malloc", "mlaloc", 2},
         TestData{"baccba", "abccab", 4}
@@ -74,7 +74,7 @@ INSTANTIATE_TEST_SUITE_P(
         TestData{"hellw", "hello", 1},
         TestData{"hell", "hello", 1},
         TestData{"bad", "good", 3},
-        TestData{"apple", "happend", 4},
+        TestData{"apple", "happened", 4},
         TestData{"a", "append", 5},
         TestData{"malloc", "mlaloc", 1},
         TestData{"baccba", "abccab", 2}

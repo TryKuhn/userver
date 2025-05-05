@@ -46,7 +46,7 @@ ControlBlock * create_control_block( StackAllocator && salloc, Fn && fn) {
     // calculate remaining size
     const std::size_t size = sctx.size - ( static_cast< char * >( sctx.sp) - static_cast< char * >( sp) );
 #endif
-    // placment new for control structure on coroutine stack
+    // placement new for control structure on coroutine stack
     return new ( sp) ControlBlock{ context::preallocated( sp, size, sctx),
                                    std::forward< StackAllocator >( salloc), std::forward< Fn >( fn) };
 }

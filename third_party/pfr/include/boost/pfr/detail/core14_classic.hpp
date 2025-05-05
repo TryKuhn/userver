@@ -514,7 +514,7 @@ constexpr auto internal_tuple_with_same_alignment() noexcept {
         std::is_trivial<type>::value && std::is_standard_layout<type>::value,
         "====================> Boost.PFR: Type can not be reflected without Loophole or C++17, because it's not POD"
     );
-    static_assert(!std::is_reference<type>::value, "====================> Boost.PFR: Not applyable");
+    static_assert(!std::is_reference<type>::value, "====================> Boost.PFR: Not applicable");
     constexpr auto res = detail::as_flat_tuple_impl<type>(
         detail::make_index_sequence< decltype(detail::flat_array_of_type_ids<type>())::size() >()
     );
