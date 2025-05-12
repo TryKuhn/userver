@@ -73,8 +73,8 @@ jobs:
                 brew tap mongodb/brew
                 brew install clickhouse redis mongodb-community rabbitmq
               
-                export OS 'mac'
-                export kafka_path '/opt/homebrew/opt/kafka/libexec'
+                export OS "mac"
+                export kafka_path "/opt/homebrew/opt/kafka/libexec"
                 ./scripts/kafka/install_kafka.sh
 
           - name: Setup ccache
