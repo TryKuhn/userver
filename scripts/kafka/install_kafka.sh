@@ -1,22 +1,24 @@
 #!/bin/sh
 
 if [ "$(uname)" = "Darwin" ]; then
-  sudo apt install -y default-jre
-else
   sudo brew install openjdk
+else
+  sudo apt install -y default-jre
 fi
 
-if ! [ -z ${KAFKA_PATH+x} ]; then
+if [ -z ${KAFKA_PATH+x} ]; then
   if [ "$(uname)" = "Darwin" ]; then
-    KAFKA_PATH="/opt/homebrew/opt/kafka/libexec"
+    export KAFKA_PATH="/opt/homebrew/opt/kafka/libexec"
   else
-    KAFKA_PATH="/etc/kafka"
+    export KAFKA_PATH="/etc/kafka"
   fi
+else
+  echo "kek"
 fi
 
 curl https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz -o kafka.tgz
-mkdir -p $KAFKA_PATH
-tar xf kafka.tgz --directory=$KAFKA_PATH
-cp -r /etc/kafka/kafka_2.13-3.8.0/* $KAFKA_PATH
-rm -rf /etc/kafka/kafka_2.13-3.8.0
+mkdir -p "${KAFKA_PATH}"
+tar xf kafka.tgz --directory="${KAFKA_PATH}"
+cp -r "${KAFKA_PATH}/kafka_2.13-3.8.0/*" "${KAFKA_PATH}"
+rm -rf "${KAFKA_PATH}/kafka_2.13-3.8.0"
 rm kafka.tgz
