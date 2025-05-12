@@ -12,8 +12,6 @@ if [ -z ${KAFKA_PATH+x} ]; then
   else
     export KAFKA_PATH="/etc/kafka"
   fi
-else
-  echo "kek"
 fi
 
 curl https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz -o kafka.tgz
