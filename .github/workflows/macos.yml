@@ -71,7 +71,11 @@ jobs:
           - name: Install test dependencies
             run: |
                 brew tap mongodb/brew
-                brew install clickhouse redis kafka mongodb-community rabbitmq
+                brew install clickhouse redis mongodb-community rabbitmq
+              
+                export OS = 'mac'
+                export kafka_path = '/opt/homebrew/opt/kafka/libexec'
+                ./scripts/kafka/install_kafka.sh
 
           - name: Setup ccache
             run: |
