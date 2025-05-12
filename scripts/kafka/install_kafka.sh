@@ -8,9 +8,9 @@ fi
 
 if ! [ -z ${KAFKA_PATH+x} ]; then
   if [ "$(uname)" = "Darwin" ]; then
-    export KAFKA_PATH="/opt/homebrew/opt/kafka/libexec"
+    KAFKA_PATH="/opt/homebrew/opt/kafka/libexec"
   else
-    export KAFKA_PATH="/etc/kafka"
+    KAFKA_PATH="/etc/kafka"
   fi
 fi
 
