@@ -180,8 +180,6 @@ jobs:
 
           - name: Install Kafka
             run: |
-                export OS "ubuntu"
-                export kafka_path "/opt/homebrew/opt/kafka/libexec"
                 sudo ./scripts/kafka/install_kafka.sh
 
           - name: Install RabbitMQ packages
