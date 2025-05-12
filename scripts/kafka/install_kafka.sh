@@ -6,7 +6,7 @@ else
   sudo brew install openjdk
 fi
 
-if ! [ -v "$(KAFKA_PATH)" ]; then
+if ! [ -z ${KAFKA_PATH+x} ]; then
   if [ "$(uname)" = "Darwin" ]; then
     export KAFKA_PATH="/opt/homebrew/opt/kafka/libexec"
   else
