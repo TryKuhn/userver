@@ -15,6 +15,7 @@ if [ -z ${KAFKA_PATH+x} ]; then
 fi
 
 curl https://dlcdn.apache.org/kafka/3.8.0/kafka_2.13-3.8.0.tgz -o kafka.tgz
+
 mkdir -p ${KAFKA_PATH}
 tar xf kafka.tgz --directory="${KAFKA_PATH}"
 cp -r ${KAFKA_PATH}/kafka_2.13-3.8.0/* ${KAFKA_PATH}
