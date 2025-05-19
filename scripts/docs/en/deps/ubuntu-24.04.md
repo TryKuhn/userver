@@ -2,6 +2,7 @@ build-essential
 ccache
 clang-format
 cmake
+gdb
 git
 libabsl-dev
 libbenchmark-dev
@@ -44,8 +45,9 @@ libnghttp2-dev
 libpq-dev
 libprotoc-dev
 libpugixml-dev
-libsnappy-dev
 libsasl2-dev
+libsnappy-dev
+libsqlite3-dev
 libssl-dev
 libxxhash-dev
 libyaml-cpp0.8
