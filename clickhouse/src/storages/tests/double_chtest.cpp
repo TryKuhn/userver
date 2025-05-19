@@ -37,6 +37,8 @@ UTEST(Double, InsertSelectWhere) {
         {-std::numeric_limits<double>::min(), -1, 0, 1, std::numeric_limits<double>::max()}};
     cluster->Insert("tmp_table", {"value"}, insert_data);
 
+    throw std::runtime_error("DEBUG");
+
     const storages::clickhouse::Query query{"SELECT * FROM tmp_table WHERE value < {0}"};
 
     const auto select_data =
