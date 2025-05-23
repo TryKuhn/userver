@@ -33,11 +33,12 @@ UTEST(Double, InsertSelectWhere) {
         "(value Float64)"
     );
 
+    throw std::runtime_error("DEBUG");
+
     const DataWithDoubles insert_data{
         {-std::numeric_limits<double>::min(), -1, 0, 1, std::numeric_limits<double>::max()}};
     cluster->Insert("tmp_table", {"value"}, insert_data);
 
-    throw std::runtime_error("DEBUG");
 
     const storages::clickhouse::Query query{"SELECT * FROM tmp_table WHERE value < {0}"};
 
