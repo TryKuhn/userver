@@ -28,7 +28,6 @@ struct CppToClickhouse<DataWithDoubles> {
 
 UTEST(Double, InsertSelectWhere) {
     ClusterWrapper cluster{};
-    throw std::runtime_error("DEBUG");
     cluster->Execute(
         "CREATE TEMPORARY TABLE IF NOT EXISTS tmp_table "
         "(value Float64)"
@@ -46,6 +45,7 @@ UTEST(Double, InsertSelectWhere) {
         cluster->Execute(query, storages::clickhouse::io::FloatingWithPrecision<double, 2>(0.5)).As<DataWithDoubles>();
     ASSERT_EQ(select_data.doubles.size(), 3);
 
+    throw std::runtime_error("DEBUG");
     for (std::size_t i = 0; i < 2; ++i) {
         ASSERT_TRUE(select_data.doubles[i] < 0.5);
     }
