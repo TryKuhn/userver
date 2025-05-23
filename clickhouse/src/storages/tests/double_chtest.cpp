@@ -27,13 +27,13 @@ struct CppToClickhouse<DataWithDoubles> {
 }  // namespace storages::clickhouse::io
 
 UTEST(Double, InsertSelectWhere) {
+    throw std::runtime_error("DEBUG");
     ClusterWrapper cluster{};
     cluster->Execute(
         "CREATE TEMPORARY TABLE IF NOT EXISTS tmp_table "
         "(value Float64)"
     );
 
-    throw std::runtime_error("DEBUG");
 
     const DataWithDoubles insert_data{
         {-std::numeric_limits<double>::min(), -1, 0, 1, std::numeric_limits<double>::max()}};
