@@ -43,8 +43,8 @@ UTEST(Double, InsertSelectWhere) {
 
     const auto select_data =
         cluster->Execute(query, storages::clickhouse::io::FloatingWithPrecision<double, 2>(0.5)).As<DataWithDoubles>();
-    assert(select_data.doubles.size() == 3);
-    ASSERT_EQ(select_data.doubles.size(), 3);
+    assert(select_data.doubles.size() == 5);
+    ASSERT_EQ(select_data.doubles.size(), 5);
 
     for (std::size_t i = 0; i < 2; ++i) {
         ASSERT_TRUE(select_data.doubles[i] < 0.5);
