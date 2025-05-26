@@ -50,6 +50,7 @@ private:
     Query WithArgs(const Args&... args) const {
         // we should throw on params count mismatch
         // TODO : https://st.yandex-team.ru/TAXICOMMON-5066
+        throw std::runtime_error("debug");
         return Query{fmt::format(fmt::runtime(text_), io::impl::Escape(args)...), name_};
     }
 
