@@ -39,9 +39,9 @@ UTEST(Double, InsertSelectWhere) {
 
     const storages::clickhouse::Query query{"SELECT * FROM tmp_table WHERE value < {0}"};
 
+    throw std::runtime_error("debug");
     const auto select_data =
         cluster->Execute(query, storages::clickhouse::io::FloatingWithPrecision<double, 2>(0.5));
-    throw std::runtime_error("debug");
 
 //    ASSERT_EQ(select_data.doubles.size(), 3);
 
